@@ -14,7 +14,7 @@ public:
     }else{
       game_win = false;
     }
-  }
+  }//TEST
 private:
   int maxGuesses;
   bool game_win;
