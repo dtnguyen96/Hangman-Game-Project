@@ -23,7 +23,7 @@ int main(){
 
   // select a random word of the same level
   ifstream inFile("dictionary.txt");
-
+  int random = rand() % 10
 
 
   return 0;
