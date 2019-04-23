@@ -1,4 +1,4 @@
-.easy words
+.easy words (less than 6 letters)
 acre
 adult
 broth
@@ -9,16 +9,25 @@ fort
 kids
 nuts
 zoo
-.medium words
+.medium words (5-8 letters)
+absent
 contrast
 cookie
-exchange
+explore
+database
 garage
 heading
 species
+thrown
 wealth
-.hard words
+.hard words (more than 8 letters)
+abundance
+chickenpox
 fireplace
+jackhammer
+kickboxing
+lumberjack
 policeman
+paparazzi
 relationship
 university
