@@ -1,0 +1,20 @@
+.easy words
+acre
+adult
+broth
+calm
+exist
+film
+fort
+kids
+nuts
+zoo
+.medium words
+contrast
+cookie
+garage
+species
+wealth
+.hard words
+fireplace
+university
