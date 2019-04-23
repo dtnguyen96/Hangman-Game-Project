@@ -12,7 +12,9 @@ zoo
 .medium words
 contrast
 cookie
+exchange
 garage
+heading
 species
 wealth
 .hard words
