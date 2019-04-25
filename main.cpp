@@ -1,19 +1,11 @@
-<<<<<<< HEAD
-// chrispapi in the house
-#include <iostream>
-#incude <fstream>
-=======
 #include <iostream>
 #include <string>
 #include <fstream>
-<<<<<<< HEAD
 #include <random>
->>>>>>> b29aaf66aa73c9b36424adb41d071ad008ff32bd
-=======
-#include <cstdlib>
-#include <ctime>
-#include <vector>
->>>>>>> 5bcde5ebd9ee8b40167452d564635eabe1f9793e
+
+#include "difficuly.h"
+#include "word.h"
+
 using namespace std;
 
 int main(){
@@ -34,23 +26,22 @@ int main(){
     }
   }
 
-<<<<<<< HEAD
-=======
   // select a random word of the selected level
+  int num_words = 10;
+  string array[10] = {};
   ifstream inFile("dictionary_easy.txt");
   if (!inFile.is_open()){
     cout << "File not open." << endl;
   }
-
+  int random = rand() % 10;
+  cout << random << endl;
   string line;
-  vector<string> string_array;
+  int counter = 0;
   while(getline(inFile,line)){
-    string_array.push_back(line);
+    array[counter] = line;
+    counter++;
   }
-  srand((unsigned)time(0));
-  int random_integer = (rand()%10)+1;
-  cout << string_array[random_integer];
+  cout << "random word: " << array[random];
 
->>>>>>> b29aaf66aa73c9b36424adb41d071ad008ff32bd
   return 0;
 }

@@ -14,5 +14,5 @@ public:
   }
 
 protected:
-  int numOfGuesses;
+  int numOfGuesses; //The user's current number of guesses
 };
