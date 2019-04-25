@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <cstdlib>
-#include <ctime>
-#include <vector>
+#include <random>
+
+#include "difficuly.h"
+#include "word.h"
+
 using namespace std;
 
 int main(){
@@ -29,11 +31,13 @@ int main(){
   if (!inFile.is_open()){
     cout << "File not open." << endl;
   }
-
+  int random = rand() % 10;
+  cout << random << endl;
   string line;
-  vector<string> string_array;
+  int counter = 0;
   while(getline(inFile,line)){
-    string_array.push_back(line);
+    array[counter] = line;
+    counter++;
   }
   srand(time(0));
   int random_integer = rand() % 10;
