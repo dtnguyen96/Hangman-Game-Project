@@ -28,14 +28,14 @@ int main(){
   int check = 0;
   while(check == 0){
     cout << "Please enter your difficulty: (easy/medium/hard) ";
-    cin >> difficulty;
+    cin >> diff;
     if (difficulty == "easy" || difficulty == "medium" || difficulty == "hard"){
       check = 1;
     }
     else{
       cout << "Incorrect input.";
       cout << "Please enter your difficulty: (easy/medium/hard) ";
-      cin >> difficulty;
+      cin >> diff;
     }
   }
   difficulty user_difficulty(diff);
@@ -46,14 +46,15 @@ int main(){
     cout << "File not open." << endl;
   }
   string line;
-  vector<string> string_array = {};
+  vector<string> string_array;
   while(getline(inFile,line)){
     string_array.push_back(line);
   }
   srand(time(0));
   int random_integer = rand() % 10;
-  string &word = string_array.at(random_integer);
-  cout << word << endl;
+  string &random_word = string_array.at(random_integer);
+  word user_word;
+  user_word.setWord(random_word);
 
 
   return 0;
