@@ -1,3 +1,4 @@
+#include <string>
 class difficulty {
 public:
   difficulty(level="") : level(level){} //Constructer

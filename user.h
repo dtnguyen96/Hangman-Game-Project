@@ -1,3 +1,4 @@
+#include <string>
 class user{
 private:
   string game_status;
