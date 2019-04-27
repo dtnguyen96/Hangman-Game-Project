@@ -46,6 +46,14 @@ int main(){
   string &word = string_array.at(random_integer);
   cout << word << endl;
 
+while(getline(file,line)){
+  for (int i = 0; i < line.size(); ++i){
+    if (line[i] == '4'){
+      line[i] = ' ';
+    }
+  }
+  newfile << line;
+}
 
   return 0;
 }
