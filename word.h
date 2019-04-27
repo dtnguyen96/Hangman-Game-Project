@@ -1,6 +1,6 @@
-#include "difficuly.h"
+#include "difficulty.h"
 
-class word : public difficuly{
+class word : public difficulty{
 private:
   int numOfLettersLeft; //Number of words not guessed yet
   string word; //Word chosen
