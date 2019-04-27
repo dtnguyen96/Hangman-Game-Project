@@ -1,6 +1,7 @@
-class difficuly {
+#include <string>
+class difficulty {
 public:
-  difficuly(level="") : level(level){} //Constructer
+  difficulty(level="") : level(level){} //Constructer
 
   operator=(diffculty const &rhs){ //Copy Constructer
     this->game_win = rhs.game_win;

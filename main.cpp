@@ -1,19 +1,29 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include <random>
 #include <ctime>
 #include <cstdlib>
+#include <vector>
 
-#include "difficuly.h"
+#include "difficulty.h"
 #include "word.h"
 
 using namespace std;
 
 int main(){
 
+  string start;
+  cout << "New game or continue old game? (new/old): ";
+  cin >> start;
+  if (start == "old"){
+    // load old game
+  }
+  else {
+    // load new game
+  }
+
   // get user input for difficulty
-  string difficulty;
+  string diff;
   int check = 0;
   while(check == 0){
     cout << "Please enter your difficulty: (easy/medium/hard) ";
@@ -27,33 +37,23 @@ int main(){
       cin >> difficulty;
     }
   }
+  difficulty user_difficulty(diff);
 
   // select a random word for the selected level
   ifstream inFile("dictionary_easy.txt");
   if (!inFile.is_open()){
     cout << "File not open." << endl;
   }
-  int random = rand() % 10;
-  cout << random << endl;
   string line;
-  int counter = 0;
+  vector<string> string_array = {};
   while(getline(inFile,line)){
-    array[counter] = line;
-    counter++;
+    string_array.push_back(line);
   }
   srand(time(0));
   int random_integer = rand() % 10;
   string &word = string_array.at(random_integer);
   cout << word << endl;
 
-while(getline(file,line)){
-  for (int i = 0; i < line.size(); ++i){
-    if (line[i] == '4'){
-      line[i] = ' ';
-    }
-  }
-  newfile << line;
-}
 
   return 0;
 }
