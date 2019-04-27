@@ -2,6 +2,8 @@
 #include <string>
 #include <fstream>
 #include <random>
+#include <ctime>
+#include <cstdlib>
 
 #include "difficuly.h"
 #include "word.h"
