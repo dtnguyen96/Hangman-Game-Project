@@ -24,5 +24,6 @@ ALGORITHM  PLAN:
 -Set values to the class variables that match the word chosen and its difficulty.
 --------------------------------------------------------
 
--Within a for loop, continuously ask user for their guess. Take guess as an array, with each character being split into elements within the array. If the input is "quit", ask the user if they want to save their game. If they do, save it. If not, then just exit the for loop and end the game ("Game Over"?)
--Every time you ask for an input, always print out the hangman right before the "cin". Additionally, print out the number of guess left, with the
+-Within a while loop, continuously ask user for their guess. Take guess as an array, with each character being split into elements within the array. If the input is "quit", ask the user if they want to save their game. If they do, save it. If not, then just exit the while loop and end the game ("Game Over"?)
+-Every time you ask for an input, always print out the hangman right before the "cin". Additionally, print out the number of guess left, with the X'd out array for the random word.
+-When the user wins, just say game won or something. If they lose say game over?
