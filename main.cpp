@@ -42,19 +42,9 @@ int main(){
 
   // select a random word for the selected level
   ifstream inFile("dictionary_easy.txt");
-  if (!inFile.is_open()){
-    cout << "File not open." << endl;
-  }
-  string line;
-  vector<string> string_array;
-  while(getline(inFile,line)){
-    string_array.push_back(line);
-  }
-  srand(time(0));
-  int random_integer = rand() % 10;
-  string &random_word = string_array.at(random_integer);
+
   word user_word;
-  user_word.setWord(random_word);
+  user_word.setWord(user_word.getRandomWord);
 
 
   return 0;
