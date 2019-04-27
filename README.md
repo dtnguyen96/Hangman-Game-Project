@@ -26,7 +26,7 @@ ALGORITHM  PLAN:
 
 -Within a while loop, continuously ask user for their guess. Take guess as an array, with each character being split into elements within the array.
 -Under the hangman, output a line that says "If you wanna quite, click 'Q' "
--If the user wants to quit, then give them the option to save/ or not to save
+-If the user wants to quit, then give them the option to save/ or not to saved
 -If they want to save, then close the file and output that file
 -If they don't, then close that file and delete the file. Exit the loop. And output Game over
 -If the user lose the game, then "Game over" and delete the file
