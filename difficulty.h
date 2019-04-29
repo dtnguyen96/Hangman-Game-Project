@@ -10,7 +10,7 @@ public:
   }
 
   void setMaxGuesses(){
-    if(level = "easy")
+    //if(level = "easy")
   }
   int getMaxGuesses(){ return maxGuesses;}
 

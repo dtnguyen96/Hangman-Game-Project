@@ -15,11 +15,11 @@ int main(){
 
   //classes
   user player;
-  difficulty user_difficulty;
+  //difficulty user_difficulty;
   word random_word;
 
   string start;
-  cout << "New game or continue old game? (new/old): ";
+  cout << "Start a new game or continue an old game? (new/old): " << endl;
   cin >> start;
   if (start == "old"){
     // load old game
@@ -35,8 +35,6 @@ int main(){
   }
   else {
     // load new game
-    //
-
 
   // get user input for difficulty
     string diff;
@@ -54,9 +52,9 @@ int main(){
       }
     }
     // create difficulty class
-    difficulty user_difficulty(diff);
 
-    // select a random word for the selected level
+
+    // load in appropriate dictionary
     if (diff == "easy"){
       ifstream inFile("dictionary_easy.txt");
     }else if (diff == "medium"){
@@ -65,9 +63,8 @@ int main(){
       ifstream inFile("dictionary_hard.txt");
     }
 
-    // create word class
-    word player_word;
-    player_word.setWord(user_word.getRandomWord(inFile));
-}
+    // set random_word
+    random_word.setWord(random_word.getRandomWord(inFile));
+  }
   return 0;
 }
