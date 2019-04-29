@@ -1,10 +1,16 @@
-#include "difficulty.h"
+#include <iostream>
 #include <fstream>
+#include <ctime>
+#include <cstdlib>
+#include <vector>
 
+#include "difficulty.h"
+
+using namespace std;
 
 class word : public difficulty{
 private:
-  int numOfLettersLeft; //Number of words not guessed yet
+  int numOfLettersLeft; //Number of letters not guessed yet
   string word; //Word chosen
 public:
   word(numOfLettersLeft = 0, word = "") : numOfLettersLeft(numOfLettersLeft), word(word){}
@@ -22,7 +28,7 @@ public:
   string getWord(){
     return word;
   }
-  
+
   string getRandomWord(ifstream &inFile){
     if (!inFile.is_open()){
       cout << "File not open." << endl;
