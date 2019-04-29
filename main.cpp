@@ -33,7 +33,6 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "--------------------------------" << endl;
       cout << "Number of letters in word: " random_word.size() << endl;
       cout << "Number of guesses left: " numGuessesLeft << endl;
-
       break;
     case 1:
       cout << "--------------------------------" << endl;
