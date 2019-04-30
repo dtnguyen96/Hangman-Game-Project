@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// Call function below and input class values
+// Call hangman function below and input class values
 void printHangman(string random_word, int numGuessesLeft){
   switch (numGuessesLeft){
     case 0:
