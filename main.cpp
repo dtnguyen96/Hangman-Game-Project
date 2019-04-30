@@ -10,9 +10,9 @@ using namespace std;
 
 // Call function below and input class values
 void printHangman(string random_word, int numGuessesLeft){
-  swtich (numGuessesLeft){
+  switch (numGuessesLeft){
     case 0:
-      out << "--------------------------------" << endl;
+      cout << "--------------------------------" << endl;
       cout << "            HANGMAN" << endl;
       cout << "--------------------------------" << endl;
       cout << "    0000000000000" << endl;
@@ -31,8 +31,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 1:
       cout << "--------------------------------" << endl;
@@ -54,8 +54,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 2:
       cout << "--------------------------------" << endl;
@@ -77,8 +77,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 3:
       cout << "--------------------------------" << endl;
@@ -100,8 +100,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 4:
       cout << "--------------------------------" << endl;
@@ -123,8 +123,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 5:
       cout << "--------------------------------" << endl;
@@ -146,8 +146,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 6:
       cout << "--------------------------------" << endl;
@@ -169,8 +169,8 @@ void printHangman(string random_word, int numGuessesLeft){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " random_word.size() << endl;
-      cout << "Number of guesses left: " numGuessesLeft << endl;
+      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     default:
       break;
@@ -208,7 +208,7 @@ int main(){
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) ";
       cin >> diff;
-      if (difficulty == "easy" || difficulty == "medium" || difficulty == "hard"){
+      if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
       }
       else{

@@ -1,10 +1,11 @@
 #include <string>
+using namespace std;
 
 class user{
 private:
   string game_status;
 public:
-  User(numOfGuesses = 0) : numOfGuesses(numOfGuesses), game_status("start"){}
+  user(numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"){}
 
   void setGameStatus(string status){ game_status = status;
   }

@@ -1,19 +1,20 @@
 #include <string>
+using namespace std;
 
 class difficulty {
 public:
   difficulty(level="") : level(level){} //Constructer
 
-  operator=(diffculty const &rhs){ //Copy Constructer
+  operator=(difficulty const &rhs){ //Copy Constructer
     this->game_win = rhs.game_win;
     this->maxGuesses = rhs.maxGuesses;
     this->level = rhs.level;
   }
 
   void setMaxGuesses(string level){
-    if(level = "easy"){
+    if(level == "easy"){
       maxGuesses = 6;
-    }else if (level = "medium"){
+    }else if (level == "medium"){
       maxGuesses = 5;
     } else {
       maxGuesses = 4;
@@ -27,7 +28,7 @@ public:
   int getMaxGuesses(){ return maxGuesses;}
 
   void checkGameStatus(string status){
-    if(string == "win"){
+    if(status == "win"){
       game_win = true;
     }else{
       game_win = false;
