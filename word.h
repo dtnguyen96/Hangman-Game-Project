@@ -3,15 +3,14 @@
 #include <ctime>
 #include <cstdlib>
 #include <vector>
-
 #include "difficulty.h"
-
 using namespace std;
 
 class word : public difficulty{
 private:
   int numOfLettersLeft; //Number of letters not guessed yet
   string word; //Word chosen
+  vector<string> word_x; // array of x's for guessing
 public:
   word(numOfLettersLeft = 0, word = "") : numOfLettersLeft(numOfLettersLeft), word(word){}
 
@@ -41,8 +40,13 @@ public:
     srand(time(0));
     int random_integer = rand() % 10;
     string &random_word = string_array.at(random_integer);
-
     return random_word;
+  }
+
+  void setWord_x() {
+    for (int i = 0; i < word.size(); i++){
+      word_x.push_back("X");
+    }
   }
 
 };

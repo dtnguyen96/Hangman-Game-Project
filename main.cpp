@@ -76,7 +76,7 @@ int main(){
 
   //classes
   user player;
-  //difficulty user_difficulty;
+  difficulty user_difficulty;
   word random_word;
 
   // ask for new/old game
@@ -124,6 +124,14 @@ int main(){
 
     // set random_word in word class
     random_word.setWord(random_word.getRandomWord(inFile));
+    // set level in difficulty class
+    user_difficulty.setLevel(diff);
+    // set max guesses in difficulty class
+    user_difficulty.setMaxGuesses(diff);
+    // set number of X's in array
+    random_word.setWord_x();
+
+    // start while loop to enter guessing phase
 
 
 

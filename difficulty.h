@@ -1,4 +1,5 @@
 #include <string>
+
 class difficulty {
 public:
   difficulty(level="") : level(level){} //Constructer
@@ -9,9 +10,20 @@ public:
     this->level = rhs.level;
   }
 
-  void setMaxGuesses(){
-    //if(level = "easy")
+  void setMaxGuesses(string level){
+    if(level = "easy"){
+      maxGuesses = 6;
+    }else if (level = "medium"){
+      maxGuesses = 5;
+    } else {
+      maxGuesses = 4;
+    }
   }
+
+  void setLevel(string player_level){
+    level = player_level;
+  }
+
   int getMaxGuesses(){ return maxGuesses;}
 
   void checkGameStatus(string status){
@@ -21,6 +33,7 @@ public:
       game_win = false;
     }
   }//TEST
+
 private:
   int maxGuesses; //Max guesses user can make
   bool game_win; //Used to check if the game is won
