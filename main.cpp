@@ -251,5 +251,6 @@ int main(){
   newgame << user.getNumOfGuesses() << endl;
   newgame << word.getWord()<<endl;
   newgame << word.getNumOfLettersLeft();
+  newgame.close();
   return 0;
 }
