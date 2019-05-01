@@ -210,19 +210,15 @@ int main(){
 
     int check = 0;
     while(check == 0){
-      cout << "Please enter your difficulty: (easy/medium/hard) ";
+      cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
       cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
         //set settings for the user's difficulty
         user_difficulty.setLevel(diff);
-        user_difficulty.setMaxGuesses(6);
-
       }
       else{//user used incorrect input
-        cout << "Incorrect input.";
-        cout << "Please enter your difficulty: (easy/medium/hard) ";
-        cin >> diff;
+        cout << "Incorrect input." << endl;
       }
     }
 
@@ -240,7 +236,7 @@ int main(){
     // set level in difficulty class
     user_difficulty.setLevel(diff);
     // set max guesses in difficulty class
-    user_difficulty.setMaxGuesses(diff);
+    user_difficulty.setMaxGuesses();
     // set number of X's in array
     random_word.setWord_x();
 
@@ -251,6 +247,7 @@ int main(){
 
   }
   //Store important values of the gameplay
+  //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
   newgame<< difficulty.getLevel() <<endl;
   newgame << user.getNumOfGuesses() << endl;
   newgame << word.getWord()<<endl;
