@@ -4,7 +4,7 @@ COSC 1430 Final Project
 SAVE-STATE FORMAT:
 
 level (diffculty class)
-game_win (diffculty class)
+maxGuesses (diffculty class)
 numOfGuesses (user class)
 word (word class)
 numOfLettersLeft (word class)

@@ -3,15 +3,16 @@ using namespace std;
 
 class difficulty {
 public:
-  difficulty(level="") : level(level){} //Constructer
+  difficulty() : level(""), game_win(false), maxGuesses(0) {} //Constructer
 
-  operator=(difficulty const &rhs){ //Copy Constructer
+  difficulty operator=(difficulty const &rhs){ //Copy Constructer
     this->game_win = rhs.game_win;
     this->maxGuesses = rhs.maxGuesses;
-    this->level = rhs.level;
+    this->setLevel(rhs.level);
+    return *this;
   }
 
-  void setMaxGuesses(string level){
+  void setMaxGuesses(){
     if(level == "easy"){
       maxGuesses = 6;
     }else if (level == "medium"){
@@ -24,6 +25,7 @@ public:
   void setLevel(string player_level){
     level = player_level;
   }
+
   string getLevel(){
     return level;
   }
