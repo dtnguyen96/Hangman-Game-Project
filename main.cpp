@@ -210,8 +210,12 @@ int main(){
       cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
+        //set settings for the user's difficulty
+        user_difficulty.setLevel(diff);
+        user_difficulty.setMaxGuesses(6);
+
       }
-      else{
+      else{//user used incorrect input
         cout << "Incorrect input.";
         cout << "Please enter your difficulty: (easy/medium/hard) ";
         cin >> diff;
