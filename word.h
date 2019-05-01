@@ -11,6 +11,7 @@ private:
   int numOfLettersLeft; //Number of letters not guessed yet
   string word_chosen; //Word chosen
   vector<string> word_x; // array of x's for guessing
+  vector<string> word_actual;
 public:
   word() : numOfLettersLeft(0), word_chosen(""), word_x({}) {}
 
@@ -47,8 +48,25 @@ public:
   void setWord_x() {
     for (int i = 0; i < word_chosen.size(); i++){
       word_x.push_back("X");
+      word_actual.push_back(word_choice[i]);
     }
     this->setNumOfLetttersLeft(word_chosen.size()); //When the word is set, so is the numOfLettersLeft
+  }
+
+  void printWord_x() {
+    for (int i = 0; i < word_x; i++){
+      cout << word_x[i] << " ";
+b
+    }
+    cout << endl;
+  }
+
+  void correctGuess(string char) {
+    for(int i = 0; i < word_x.size(); x++){
+      if(char == word_actual[i]){
+        word_x[i] = char;
+      }
+    }
   }
 
 };

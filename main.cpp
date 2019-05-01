@@ -239,13 +239,14 @@ int main(){
     user_difficulty.setMaxGuesses();
     // set number of X's in array
     random_word.setWord_x();
-
-    // start while loop to enter guessing phase
-
-
-
-
   }
+//start while loop to enter guessing phase
+while(!user_difficulty.getGame_Win){
+//print hangman
+
+
+}
+
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
   newgame<< difficulty.getLevel() <<endl;

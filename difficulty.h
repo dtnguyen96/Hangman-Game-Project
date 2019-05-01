@@ -40,6 +40,10 @@ public:
     }
   }//TEST
 
+  bool getGame_Win(){
+    return game_win;
+  }
+
 private:
   int maxGuesses; //Max guesses user can make
   bool game_win; //Used to check if the game is won
