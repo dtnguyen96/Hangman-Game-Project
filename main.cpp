@@ -193,14 +193,20 @@ int main(){
 
   if (start == "old"){ // load old game
     ifstream oldgame("Game2.txt");
+    string level1;
+    int guesses;
+    string word_choice;
+    int letters_left;
+    while (oldgame>>level1>>guesses>>word_choice>>letters_left){
+      user_difficulty.setLevel(level1);
+      player.setNumOfGuesses(guesses);
+      random_word.setWord(word_choice);
+      random_word.setNumOfLetttersLeft(letters_left);
+    }
 
     //The code below is for assigning the information in the text file to the classes
 
-    //user_difficulty.setLevel(level);
-    //user_difficulty.setMaxGuesses();
-    //player.setNumOfGuesses();
-    //random_word.setWord(word);
-    //random_word.setNumOfLetttersLeft(numOfLettersLeft);
+
 
   }
   else { // load new game
@@ -239,20 +245,29 @@ int main(){
     user_difficulty.setMaxGuesses();
     // set number of X's in array
     random_word.setWord_x();
+
+    // start while loop to enter guessing phase
+
+
+
+
   }
-//start while loop to enter guessing phase
-while(!user_difficulty.getGame_Win){
-//print hangman
-
-
-}
-
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
-  newgame<< difficulty.getLevel() <<endl;
-  newgame << user.getNumOfGuesses() << endl;
-  newgame << word.getWord()<<endl;
-  newgame << word.getNumOfLettersLeft();
+  if (word.getNumOfLettersLeft==0){
+    cout << "You Won";
+    newgame.close();
+    }
+  else if (user.getNumOfGuesses==6){
+    cout<< "Game Over";
+    newgame.close();
+  }
+  else {
+  newgame<< user_difficulty.getLevel() <<endl;
+  newgame << player.getNumOfGuesses() << endl;
+  newgame << random_word.getWord()<<endl;
+  newgame << random_word.getNumOfLettersLeft();
   newgame.close();
+}
   return 0;
 }
