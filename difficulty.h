@@ -24,6 +24,9 @@ public:
   void setLevel(string player_level){
     level = player_level;
   }
+  string getLevel(){
+    return level;
+  }
 
   int getMaxGuesses(){ return maxGuesses;}
 

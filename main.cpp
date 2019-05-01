@@ -8,6 +8,8 @@
 
 using namespace std;
 
+
+
 // Call hangman function below and input class values
 void printHangman(string random_word, int numGuessesLeft){
   switch (numGuessesLeft){
@@ -190,6 +192,7 @@ int main(){
   cin >> start;
 
   if (start == "old"){ // load old game
+    ifstream oldgame("Game2.txt");
 
     //The code below is for assigning the information in the text file to the classes
 
@@ -201,9 +204,10 @@ int main(){
 
   }
   else { // load new game
-
+    //start a new file when starting a new game
+    ofstream newgame("Game1.txt");
     //get user input for difficulty
-    string diff;
+
     int check = 0;
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) ";
@@ -246,5 +250,11 @@ int main(){
 
 
   }
+  //Store important values of the gameplay
+  newgame<< difficulty.getLevel() <<endl;
+  newgame << user.getNumOfGuesses() << endl;
+  newgame << word.getWord()<<endl;
+  newgame << word.getNumOfLettersLeft();
+  newgame.close();
   return 0;
 }
