@@ -2,7 +2,12 @@
 #include <string>
 #include <fstream>
 
+<<<<<<< HEAD
 #include "user.h"
+=======
+#include "difficulty.h"
+#include "word.h"
+>>>>>>> 52226dae1720b9b84f254e662c7003f2cddac4ad
 
 using namespace std;
 
@@ -212,7 +217,7 @@ int main(){
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
 
-      cin >> diff;
+      //cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
         //set settings for the user's difficulty
