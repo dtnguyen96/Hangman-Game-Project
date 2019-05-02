@@ -254,7 +254,7 @@ int main(){
       string guess;
       cin >> guess;
 
-      if(!random_word.checkGuess(guess)){
+      if(!random_word.checkGuess(guess,player)){
         cout << "Incorrect guess!" << endl;
         //print the hangman again
 
