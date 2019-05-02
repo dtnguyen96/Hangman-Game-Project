@@ -213,7 +213,7 @@ int main(){
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
 
-      cin >> diff;
+      //cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
         //set settings for the user's difficulty
