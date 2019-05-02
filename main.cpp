@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 
+#include "difficulty.h"
 #include "word.h"
 #include "user.h"
 
@@ -207,8 +208,6 @@ int main(){
     //The code below is for assigning the information in the text file to the classes
   }
   else { // load new game
-    //start a new file when starting a new game
-    ofstream newgame("Game1.txt");
     //get user input for difficulty
 
     int check = 0;
@@ -246,7 +245,6 @@ int main(){
 
 
   //print the hangman
-  printHangman(user.getWord(),user_difficulty.getMaxGuesses(), &player);
 
   // start while loop to enter guessing phase
     while(!user_difficulty.getGame_Win()){
@@ -259,7 +257,6 @@ int main(){
       if(!random_word.checkGuess(guess)){
         cout << "Incorrect guess!" << endl;
         //print the hangman again
-        printHangman(user.getWord(),user_difficulty.getMaxGuesses(), &player);
 
     }
 
@@ -275,6 +272,7 @@ int main(){
 
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
+  ofstream newgame("Game1.txt");
   if (random_word.getNumOfLettersLeft()==0){
     cout << "You Won";
     newgame.close();
