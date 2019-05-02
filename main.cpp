@@ -205,9 +205,6 @@ int main(){
     }
 
     //The code below is for assigning the information in the text file to the classes
-
-
-
   }
   else { // load new game
     //start a new file when starting a new game
@@ -245,20 +242,42 @@ int main(){
     user_difficulty.setMaxGuesses();
     // set number of X's in array
     random_word.setWord_x();
-
-    // start while loop to enter guessing phase
-
-
-
-
   }
+
+
+  //print the hangman
+
+  // start while loop to enter guessing phase
+  while(!user_difficulty.getGame_Win()){
+    random_word.printWord_x();
+    //take user's guess but make sure to account for if user wants to save a file
+
+    string guess;
+    cin >> guess;
+
+    if(!random_word.checkGuess(guess)){
+      cout << "Incorrect guess!" << endl;
+      //print the hangman again
+  }
+
+    //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
+    if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
+      break;}
+  }
+
+
+
+
+
+
+
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
-  if (word.getNumOfLettersLeft==0){
+  if (random_word.getNumOfLettersLeft()==0){
     cout << "You Won";
     newgame.close();
     }
-  else if (user.getNumOfGuesses==6){
+  else if (player.getNumOfGuesses()==user_difficulty.getMaxGuesses()){
     cout<< "Game Over";
     newgame.close();
   }

@@ -15,6 +15,7 @@ public:
   }
   void setNumOfGuesses(int guesses){ numOfGuesses = guesses;
   }
+  void increaseNumOfGuesses(){ numOfGuess++;}
 
 protected:
   int numOfGuesses; //The user's current number of guesses
