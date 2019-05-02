@@ -15,7 +15,8 @@ private:
   vector<char> word_actual;
 public:
   word() : numOfLettersLeft(0), word_chosen("") {
-    word_x = {};
+    vector<char> temp;
+    word_x=temp;
   }
 
   void setNumOfLetttersLeft(int letters_left){
@@ -50,14 +51,14 @@ public:
 
   void setWord_x() {
     for (int i = 0; i < word_chosen.size(); i++){
-      word_x.push_back('X');
-      word_actual.push_back(word_chosen[i]);
+      word_x.push_back("X");
+      word_actual.push_back(word_choice[i]);
     }
     this->setNumOfLetttersLeft(word_chosen.size()); //When the word is set, so is the numOfLettersLeft
   }
 
   void printWord_x() {
-    for (int i = 0; i < word_x.size(); i++){
+    for (int i = 0; i < word_x; i++){
       cout << word_x[i] << " ";
     }
     cout << endl;
