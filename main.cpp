@@ -12,7 +12,7 @@ using namespace std;
 
 // Call hangman function below and input class values
 void printHangman(string random_word, int max, user player){
-  int numGuessesLeft = max - player.getNumOfGuesses().
+  int numGuessesLeft = max - player.getNumOfGuesses();
   switch (player.getNumOfWrongGuesses()){
     case 0:
       cout << "--------------------------------" << endl;
@@ -209,11 +209,11 @@ int main(){
   }
   else { // load new game
     //get user input for difficulty
-
+    string diff;
     int check = 0;
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
-      string diff;
+
       cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
