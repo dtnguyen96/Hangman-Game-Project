@@ -88,10 +88,10 @@ bool checkGuess(string guess, user player){
   bool good_guess = false;
 
 
-  if(guess.size() != 1 || guess.size() != word_actual.size(){
+  if(guess.size() != 1 || guess.size() != word_actual.size()){
     cout << "Bad input!"
     return true;
-  })
+  }
 
   player.increaseNumOfGuesses();
 
