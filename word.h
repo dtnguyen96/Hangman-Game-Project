@@ -49,7 +49,7 @@ public:
   void setWord_x() {
     for (int i = 0; i < word_chosen.size(); i++){
       word_x.push_back('X');
-      word_actual.push_back(word_choice[i]);
+      word_actual.push_back(word_chosen[i]);
     }
     this->setNumOfLetttersLeft(word_chosen.size()); //When the word is set, so is the numOfLettersLeft
   }
@@ -88,8 +88,8 @@ bool checkGuess(string guess, user player){
   bool good_guess = false;
 
 
-  if(guess.size() != 1 || guess.size() != word_actual.size(){
-    cout << "Bad input!"
+  if(guess.size() != 1 || guess.size() != word_actual.size()){
+    cout << "Bad input!";
     return true;
   })
 
