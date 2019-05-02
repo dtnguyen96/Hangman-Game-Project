@@ -247,6 +247,7 @@ int main(){
 
 
   //print the hangman
+  printHangman(user.getWord(),user_difficulty.getMaxGuesses, &player);
 
   // start while loop to enter guessing phase
   while(!user_difficulty.getGame_Win()){
@@ -259,7 +260,7 @@ int main(){
     if(!random_word.checkGuess(guess)){
       cout << "Incorrect guess!" << endl;
       //print the hangman again
-      //printHangman(user.getWord(),user_difficulty.getMaxGuesses-user.getNumWrongGuesses);
+      printHangman(user.getWord(),user_difficulty.getMaxGuesses, &player);
   }
 
     //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
