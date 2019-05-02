@@ -11,7 +11,7 @@ using namespace std;
 
 // Call hangman function below and input class values
 void printHangman(string random_word, int max, user player){
-  int numGuessesLeft = max - player.getNumOfGuesses().
+  int numGuessesLeft = max - player.getNumOfGuesses();
   switch (player.getNumOfWrongGuesses()){
     case 0:
       cout << "--------------------------------" << endl;
@@ -207,13 +207,12 @@ int main(){
     //The code below is for assigning the information in the text file to the classes
   }
   else { // load new game
-    //start a new file when starting a new game
-    ofstream newgame("Game1.txt");
     //get user input for difficulty
-
+    string diff;
     int check = 0;
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
+
       cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
@@ -246,7 +245,6 @@ int main(){
 
 
   //print the hangman
-  printHangman(user.getWord(),user_difficulty.getMaxGuesses(), &player);
 
   // start while loop to enter guessing phase
     while(!user_difficulty.getGame_Win()){
@@ -256,10 +254,9 @@ int main(){
       string guess;
       cin >> guess;
 
-      if(!random_word.checkGuess(guess)){
+      if(!random_word.checkGuess(guess,player)){
         cout << "Incorrect guess!" << endl;
         //print the hangman again
-        printHangman(user.getWord(),user_difficulty.getMaxGuesses(), &player);
 
     }
 
@@ -275,6 +272,7 @@ int main(){
 
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
+  ofstream newgame("Game1.txt");
   if (random_word.getNumOfLettersLeft()==0){
     cout << "You Won";
     newgame.close();
