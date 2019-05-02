@@ -8,7 +8,7 @@ private:
   int wrongGuesses;
 
 public:
-  user(int numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"), wrongGuesses(0){}
+  user(int numOfGuesses = 0) : numOfGuesses(numOfGuesses), game_status("start"), wrongGuesses(0){}
 
   void setGameStatus(string status){ game_status = status;
   }
@@ -18,8 +18,7 @@ public:
   }
   void setNumOfGuesses(int guesses){ numOfGuesses = guesses;
   }
-  void increaseNumOfGuesses(){ numOfGuess++;}
+  void increaseNumOfGuesses(){ numOfGuesses++;}
   void increaseNumOfWrongGuesses(){ wrongGuesses++;}
   int getNumOfWrongGuesses(){return wrongGuesses;}
-
 };
