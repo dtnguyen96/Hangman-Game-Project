@@ -259,7 +259,11 @@ int main(){
     if(!random_word.checkGuess(guess)){
       cout << "Incorrect guess!" << endl;
       //print the hangman again
+<<<<<<< HEAD
 
+=======
+      //printHangman(user.getWord(),user_difficulty.getMaxGuesses-user.getNumWrongGuesses);
+>>>>>>> 482660d4958d578999196c31248b000a7f2aad25
   }
 
     //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
