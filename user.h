@@ -8,7 +8,7 @@ private:
   int wrongGuesses;
 
 public:
-  user(numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"), wrongGuesses(0){}
+  user(int numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"), wrongGuesses(0){}
 
   void setGameStatus(string status){ game_status = status;
   }
