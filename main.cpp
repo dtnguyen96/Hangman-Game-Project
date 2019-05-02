@@ -209,7 +209,7 @@ int main(){
   }
   else { // load new game
     //get user input for difficulty
-    string diff=="easy";
+    string diff="easy";
     int check = 0;
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
