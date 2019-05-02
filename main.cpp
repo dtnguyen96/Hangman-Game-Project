@@ -213,6 +213,7 @@ int main(){
     int check = 0;
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
+      string diff;
       cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
