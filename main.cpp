@@ -4,7 +4,6 @@
 
 #include "difficulty.h"
 #include "word.h"
-#include "user.h"
 
 using namespace std;
 
