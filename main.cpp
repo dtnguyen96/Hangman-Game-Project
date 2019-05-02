@@ -2,7 +2,6 @@
 #include <string>
 #include <fstream>
 
-#include "difficulty.h"
 #include "word.h"
 #include "user.h"
 
