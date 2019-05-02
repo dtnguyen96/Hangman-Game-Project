@@ -247,27 +247,25 @@ int main(){
 
 
   //print the hangman
-  printHangman(user.getWord(),user_difficulty.getMaxGuesses, &player);
 
   // start while loop to enter guessing phase
-  while(!user_difficulty.getGame_Win()){
-    random_word.printWord_x();
-    //take user's guess but make sure to account for if user wants to save a file
+    while(!user_difficulty.getGame_Win()){
+      random_word.printWord_x();
+      //take user's guess but make sure to account for if user wants to save a file
 
-    string guess;
-    cin >> guess;
+      string guess;
+      cin >> guess;
 
-    if(!random_word.checkGuess(guess)){
-      cout << "Incorrect guess!" << endl;
-      //print the hangman again
-      printHangman(user.getWord(),user_difficulty.getMaxGuesses, &player);
-  }
+      if(!random_word.checkGuess(guess)){
+        cout << "Incorrect guess!" << endl;
+        //print the hangman again
 
-    //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
-    if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
-      break;}
-  }
+    }
 
+      //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
+      if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
+        break;}
+    }
 
 
 
