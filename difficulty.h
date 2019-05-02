@@ -16,9 +16,9 @@ public:
     if(level == "easy"){
       maxGuesses = 6;
     }else if (level == "medium"){
-      maxGuesses = 5;
+      maxGuesses = 6;
     } else {
-      maxGuesses = 4;
+      maxGuesses = 6;
     }
   }
 

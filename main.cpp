@@ -11,9 +11,9 @@ using namespace std;
 
 
 // Call hangman function below and input class values
-void printHangman(string random_word, int max, user player){
+void printHangman(string random_word, int max, user& player){
   int numGuessesLeft = max - player.getNumOfGuesses();
-  switch (player.getNumOfWrongGuesses()){
+  switch (max-(player.getNumOfWrongGuesses())){
     case 0:
       cout << "--------------------------------" << endl;
       cout << "            HANGMAN" << endl;
@@ -214,7 +214,7 @@ int main(){
     while(check == 0){
       cout << "Please enter your difficulty: (easy/medium/hard) " << endl;
 
-      //cin >> diff;
+      cin >> diff;
       if (diff == "easy" || diff == "medium" || diff == "hard"){
         check = 1;
         //set settings for the user's difficulty
@@ -249,7 +249,7 @@ int main(){
 
 
   //print the hangman
-
+  printHangman(random_word.getWord(),user_difficulty.getMaxGuesses(), player);
   // start while loop to enter guessing phase
     while(!user_difficulty.getGame_Win()){
       random_word.printWord_x();
@@ -260,10 +260,12 @@ int main(){
 
       if(!random_word.checkGuess(guess,player)){
         cout << "Incorrect guess!" << endl;
+
         //print the hangman again
-
-    }
-
+        player.increaseNumOfWrongGuesses();
+        player.increaseNumOfGuesses();
+        printHangman(random_word.getWord(),user_difficulty.getMaxGuesses(), player);
+    }else{player.increaseNumOfGuesses();}
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
       if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
         break;}
@@ -278,11 +280,11 @@ int main(){
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
   ofstream newgame("Game1.txt");
   if (random_word.getNumOfLettersLeft()==0){
-    cout << "You Won";
+    cout << "You Won" << endl;
     newgame.close();
     }
   else if (player.getNumOfGuesses()==user_difficulty.getMaxGuesses()){
-    cout<< "Game Over";
+    cout<< "Game Over" << endl;
     newgame.close();
   }
   else {

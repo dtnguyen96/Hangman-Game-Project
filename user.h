@@ -18,7 +18,11 @@ public:
   }
   void setNumOfGuesses(int guesses){ numOfGuesses = guesses;
   }
+
   void increaseNumOfGuesses(){ numOfGuesses++;}
+
   void increaseNumOfWrongGuesses(){ wrongGuesses++;}
+
   int getNumOfWrongGuesses(){return wrongGuesses;}
+
 };
