@@ -14,7 +14,9 @@ private:
   vector<char> word_x; // array of x's for guessing
   vector<char> word_actual;
 public:
-  word() : numOfLettersLeft(0), word_chosen(""), word_x({}) {}
+  word() : numOfLettersLeft(0), word_chosen("") {
+    word_x = {};
+  }
 
   void setNumOfLetttersLeft(int letters_left){
     numOfLettersLeft = letters_left;
