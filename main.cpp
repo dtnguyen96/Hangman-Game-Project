@@ -2,12 +2,9 @@
 #include <string>
 #include <fstream>
 
-<<<<<<< HEAD
-#include "user.h"
-=======
-#include "difficulty.h"
+//#include "user.h"
+//#include "difficulty.h"
 #include "word.h"
->>>>>>> 52226dae1720b9b84f254e662c7003f2cddac4ad
 
 using namespace std;
 
@@ -231,14 +228,17 @@ int main(){
     // load in appropriate dictionary
     if (diff == "easy"){
       ifstream inFile("dictionary_easy.txt");
+      random_word.setWord(random_word.getRandomWord(inFile));
     }else if (diff == "medium"){
       ifstream inFile("dictionary_medium.txt");
+      random_word.setWord(random_word.getRandomWord(inFile));
     }else{
       ifstream inFile("dictionary_hard.txt");
+      random_word.setWord(random_word.getRandomWord(inFile));
     }
 
     // set random_word in word class
-    random_word.setWord(random_word.getRandomWord(inFile));
+    //random_word.setWord(random_word.getRandomWord(inFile));
     // set level in difficulty class
     user_difficulty.setLevel(diff);
     // set max guesses in difficulty class

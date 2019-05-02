@@ -91,7 +91,7 @@ bool checkGuess(string guess, user player){
   if(guess.size() != 1 || guess.size() != word_actual.size()){
     cout << "Bad input!";
     return true;
-  })
+  }
 
   player.increaseNumOfGuesses();
 
