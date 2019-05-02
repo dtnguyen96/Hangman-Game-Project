@@ -11,8 +11,9 @@ using namespace std;
 
 
 // Call hangman function below and input class values
-void printHangman(string random_word, int numGuessesLeft){
-  switch (numGuessesLeft){
+void printHangman(string random_word, int max, user player){
+  int numGuessesLeft = max - player.getNumOfGuesses().
+  switch (player.getNumOfWrongGuesses()){
     case 0:
       cout << "--------------------------------" << endl;
       cout << "            HANGMAN" << endl;
@@ -258,6 +259,7 @@ int main(){
     if(!random_word.checkGuess(guess)){
       cout << "Incorrect guess!" << endl;
       //print the hangman again
+
   }
 
     //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made

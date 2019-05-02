@@ -4,8 +4,11 @@ using namespace std;
 class user{
 private:
   string game_status;
+  int numOfGuesses; //The user's current number of guesses
+  int wrongGuesses;
+
 public:
-  user(numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"){}
+  user(numOfGuesses = 0) : numOfGuesses(numOfGuess), game_status("start"), wrongGuesses(0){}
 
   void setGameStatus(string status){ game_status = status;
   }
@@ -16,7 +19,7 @@ public:
   void setNumOfGuesses(int guesses){ numOfGuesses = guesses;
   }
   void increaseNumOfGuesses(){ numOfGuess++;}
+  void increaseNumOfWrongGuesses(){ wrongGuesses++;}
+  int getNumOfWrongGuesses(){return wrongGuesses;}
 
-protected:
-  int numOfGuesses; //The user's current number of guesses
 };

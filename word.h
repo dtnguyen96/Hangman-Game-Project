@@ -105,14 +105,10 @@ bool checkGuess(string guess, user player){
     }
   }
 
-  return checkGuess;
+  if(!good_guess){
+    player.increaseNumOfWrongGuesses();
+  }
+
+  return good_guess;
 }
-
-
-
-
-
-
-
-
 };
