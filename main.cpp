@@ -11,7 +11,7 @@ using namespace std;
 
 
 // Call hangman function below and input class values
-void printHangman(string random_word, int max, user& player){
+void printHangman(word random_word, int max, user& player){
   int numGuessesLeft = max - player.getNumOfGuesses();
   switch (max-(player.getNumOfWrongGuesses())){
     case 0:
@@ -34,7 +34,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 1:
@@ -57,7 +57,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 2:
@@ -80,7 +80,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 3:
@@ -103,7 +103,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 4:
@@ -126,7 +126,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " <<random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 5:
@@ -149,7 +149,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     case 6:
@@ -172,7 +172,7 @@ void printHangman(string random_word, int max, user& player){
       cout << "    0" << endl;
       cout << "    0" << endl;
       cout << "--------------------------------" << endl;
-      cout << "Number of letters in word: " << random_word.size() << endl;
+      cout << "Number of letters in word: " << random_word.getNumOfLettersLeft() << endl;
       cout << "Number of guesses left: " << numGuessesLeft << endl;
       break;
     default:
@@ -249,7 +249,7 @@ int main(){
 
 
   //print the hangman
-  printHangman(random_word.getWord(),user_difficulty.getMaxGuesses(), player);
+  printHangman(random_word,user_difficulty.getMaxGuesses(), player);
   // start while loop to enter guessing phase
     while(!user_difficulty.getGame_Win()){
       random_word.printWord_x();
@@ -259,12 +259,12 @@ int main(){
       cin >> guess;
 
       if(!random_word.checkGuess(guess,player)){
-        cout << "Incorrect guess!" << endl;
+        cout << endl << "Incorrect guess!" << endl;
 
         //print the hangman again
         player.increaseNumOfWrongGuesses();
         player.increaseNumOfGuesses();
-        printHangman(random_word.getWord(),user_difficulty.getMaxGuesses(), player);
+        printHangman(random_word,user_difficulty.getMaxGuesses(), player);
     }else{player.increaseNumOfGuesses();}
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
       if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){

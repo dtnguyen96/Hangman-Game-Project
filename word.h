@@ -54,14 +54,14 @@ public:
       word_x.push_back('X');
       word_actual.push_back(word_chosen[i]);
     }
-    this->setNumOfLetttersLeft(word_chosen.size()); //When the word is set, so is the numOfLettersLeft
+    this->setNumOfLetttersLeft(word_chosen.size()-1); //When the word is set, so is the numOfLettersLeft
   }
 
   void printWord_x() {
     for (int i = 0; i < word_x.size(); i++){
-      cout << word_actual[i] << " ";
+      cout << word_x[i] << " ";
     }
-    cout << endl << endl << endl;
+    cout << endl << endl;
   }
 
   // void correctGuess(string char) {
