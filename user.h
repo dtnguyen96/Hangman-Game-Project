@@ -32,7 +32,7 @@ public:
   int getNumOfWrongGuesses(){return wrongGuesses;}
 
   void addGood_Guess(string input){
-    cout << "Guess being added" << endl;
+    //cout << "Guess being added" << endl;
     good_guesses += input;
   }
 

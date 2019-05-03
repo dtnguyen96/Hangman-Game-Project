@@ -221,16 +221,6 @@ int main(){
     random_word.setWord_x(player);
     random_word.setNumOfLettersLeft(letters_left);
 
-    // while (oldgame>>level1>>guesses>>word_choice>>letters_left>>wrongGuesses){
-    //   user_difficulty.setLevel(level1);
-    //   cout << level1 << " is the level." << endl; //for testing the file reading...
-    //   user_difficulty.setMaxGuesses();
-    //   player.setNumOfGuesses(guesses);
-    //   player.setNumOfWrongGuesses(wrongGuesses);
-    //   random_word.setWord(word_choice);
-    //   random_word.setWord_x();
-    //   random_word.setNumOfLettersLeft(letters_left);
-    // }
     oldgame.close();
 
     //The code below is for assigning the information in the text file to the classes
@@ -264,9 +254,6 @@ int main(){
       ifstream inFile("dictionary_hard.txt");
       random_word.setWord(random_word.getRandomWord(inFile));
     }
-
-    // set random_word in word class
-    //random_word.setWord(random_word.getRandomWord(inFile));
     // set level in difficulty class
     user_difficulty.setLevel(diff);
     // set max guesses in difficulty class
@@ -275,40 +262,31 @@ int main(){
     random_word.setWord_x(player);
   }
 
-
   //print the hangman
   printHangman(random_word,user_difficulty.getMaxGuesses(), player);
   // start while loop to enter guessing phase
     while(!user_difficulty.getGame_Win()){
       random_word.printWord_x();
       //take user's guess but make sure to account for if user wants to save a file
-
       string guess;
       cin >> guess;
 
       if(!random_word.checkGuess(guess,player)){
         cout << endl << "Incorrect guess!" << endl;
-
         //print the hangman again
         player.increaseNumOfWrongGuesses();
         player.increaseNumOfGuesses();
         printHangman(random_word,user_difficulty.getMaxGuesses(), player);
-
     }else{
       if(guess == "quit"){break;}
       else{player.addGood_Guess(guess);}
   }
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
-
-
       if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
         break;}
     }
-
-  //Store important values of the gameplay
-  //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
   ofstream newgame("save_state.txt");
-
+//Checks to see if the game is won or lost
   if (random_word.getNumOfLettersLeft()==0){
     cout << "You Won" << endl;
     newgame.close();
@@ -318,17 +296,13 @@ int main(){
     newgame.close();
   }
   else {
-  //newgame << "LEVEL" << endl;
+  //Saves information on save file
   newgame<< user_difficulty.getLevel() <<endl;
-  //newgame << "NUMOFGUESSES" << endl;
   cout << "Level is " << user_difficulty.getLevel() << endl;
   newgame << player.getNumOfGuesses() << endl;
   newgame << player.getGood_Guesses() << endl;
-  //newgame << "WRONGGUESSES" << endl;
   newgame << player.getNumOfWrongGuesses() << endl;
-  //newgame << "GETWORD" << endl;
   newgame << random_word.getWord()<<endl;
-  //newgame << "LETTERSLEFT" << endl;
   newgame << random_word.getNumOfLettersLeft();
   cout << "Save state made." << endl;
   newgame.close();
