@@ -193,8 +193,9 @@ int main(){
   cin >> start;
 
   if (start == "old"){ // load old game
+    player.loaded_game();
     ifstream oldgame("save_state.txt");
-    string level1, type, checktype;
+    string level1, type, checktype, goodGuesses;
     int guesses;
     string word_choice;
     int letters_left;
@@ -204,18 +205,21 @@ int main(){
 //i also need to figure out how im gonna pass the word_x...
     oldgame >> level1;
     oldgame >> guesses;
+    oldgame >> goodGuesses;
     oldgame >> wrongGuesses;
     oldgame >> word_choice;
     oldgame >> letters_left;
 
     user_difficulty.setLevel(level1);
-    cout << level1 << " is the level." << endl; //for testing the file reading...
+    //cout << level1 << " is the level." << endl; //for testing the file reading...
     user_difficulty.setMaxGuesses();
     player.setNumOfGuesses(guesses);
+    player.setGood_Guesses(goodGuesses);
+    cout << goodGuesses;
     player.setNumOfWrongGuesses(wrongGuesses);
     random_word.setWord(word_choice);
-    random_word.setWord_x();
-    random_word.setNumOfLetttersLeft(letters_left);
+    random_word.setWord_x(player);
+    random_word.setNumOfLettersLeft(letters_left);
 
     // while (oldgame>>level1>>guesses>>word_choice>>letters_left>>wrongGuesses){
     //   user_difficulty.setLevel(level1);
@@ -225,7 +229,7 @@ int main(){
     //   player.setNumOfWrongGuesses(wrongGuesses);
     //   random_word.setWord(word_choice);
     //   random_word.setWord_x();
-    //   random_word.setNumOfLetttersLeft(letters_left);
+    //   random_word.setNumOfLettersLeft(letters_left);
     // }
     oldgame.close();
 
@@ -268,7 +272,7 @@ int main(){
     // set max guesses in difficulty class
     user_difficulty.setMaxGuesses();
     // set number of X's in array
-    random_word.setWord_x();
+    random_word.setWord_x(player);
   }
 
 
@@ -292,6 +296,7 @@ int main(){
 
     }else{
       if(guess == "quit"){break;}
+      else{player.addGood_Guess(guess);}
   }
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
 
@@ -318,6 +323,7 @@ int main(){
   //newgame << "NUMOFGUESSES" << endl;
   cout << "Level is " << user_difficulty.getLevel() << endl;
   newgame << player.getNumOfGuesses() << endl;
+  newgame << player.getGood_Guesses() << endl;
   //newgame << "WRONGGUESSES" << endl;
   newgame << player.getNumOfWrongGuesses() << endl;
   //newgame << "GETWORD" << endl;
