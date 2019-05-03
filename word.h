@@ -90,7 +90,10 @@ public:
 bool checkGuess(string guess, user player){
   bool good_guess = false;
 
-  //
+  if(guess == "quit"){
+    return true;
+  }
+
   // if(guess.size() = 1 || guess.size() != word_actual.size()){
   //   cout << "Bad input, " << endl;
   //   return true;
