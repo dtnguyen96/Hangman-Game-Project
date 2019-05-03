@@ -21,6 +21,8 @@ public:
 
   void increaseNumOfGuesses(){ numOfGuesses++;}
 
+  void setNumOfWrongGuesses(int wrongGuesses){ wrongGuesses = wrongGuesses;}
+
   void increaseNumOfWrongGuesses(){ wrongGuesses++;}
 
   int getNumOfWrongGuesses(){return wrongGuesses;}

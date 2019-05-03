@@ -193,15 +193,19 @@ int main(){
   cin >> start;
 
   if (start == "old"){ // load old game
-    ifstream oldgame("Game2.txt");
+    ifstream oldgame("save_state.txt");
     string level1;
     int guesses;
     string word_choice;
     int letters_left;
-    while (oldgame>>level1>>guesses>>word_choice>>letters_left){
+    int wrongGuesses;
+    while (oldgame>>level1>>guesses>>word_choice>>letters_left>>wrongGuesses){
       user_difficulty.setLevel(level1);
+      user_difficulty.setMaxGuesses();
       player.setNumOfGuesses(guesses);
+      player.setNumOfWrongGuesses(wrongGuesses);
       random_word.setWord(word_choice);
+      random_word.setWord_x();
       random_word.setNumOfLetttersLeft(letters_left);
     }
 
@@ -265,20 +269,23 @@ int main(){
         player.increaseNumOfWrongGuesses();
         player.increaseNumOfGuesses();
         printHangman(random_word,user_difficulty.getMaxGuesses(), player);
-    }else{player.increaseNumOfGuesses();}
+
+    }else{
+      if(guess == "quit"){break;}
+      else{
+        player.increaseNumOfGuesses();}
+  }
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
+
+
       if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
         break;}
     }
 
-
-
-
-
-
   //Store important values of the gameplay
   //MAKE SURE TO CHECK IF THE GAME IS WON OR NOT!!
-  ofstream newgame("Game1.txt");
+  ofstream newgame("save_state.txt");
+
   if (random_word.getNumOfLettersLeft()==0){
     cout << "You Won" << endl;
     newgame.close();
@@ -290,8 +297,10 @@ int main(){
   else {
   newgame<< user_difficulty.getLevel() <<endl;
   newgame << player.getNumOfGuesses() << endl;
+  newgame << player.getNumOfWrongGuesses() << endl;
   newgame << random_word.getWord()<<endl;
   newgame << random_word.getNumOfLettersLeft();
+  cout << "Save state made." << endl;
   newgame.close();
 }
   return 0;
