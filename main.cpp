@@ -201,6 +201,7 @@ int main(){
     int wrongGuesses;
     while (oldgame>>level1>>guesses>>word_choice>>letters_left>>wrongGuesses){
       user_difficulty.setLevel(level1);
+      cout << level1 << " is the level." << endl; //for testing the file reading...
       user_difficulty.setMaxGuesses();
       player.setNumOfGuesses(guesses);
       player.setNumOfWrongGuesses(wrongGuesses);
