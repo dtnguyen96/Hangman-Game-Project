@@ -64,6 +64,8 @@ public:
     cout << endl << endl;
   }
 
+
+
   // void correctGuess(string char) {
   //   for(int i = 0; i < word_x.size(); x++){
   //     if(char == word_actual[i]){
@@ -99,8 +101,6 @@ bool checkGuess(string guess, user player){
   //   return true;
   // }
 
-  player.increaseNumOfGuesses();
-
   for(int i = 0; i < guess.size(); i++){
     for(int j = 0; j < word_x.size(); j++){
       if(word_actual[j]==guess[i]){
@@ -109,10 +109,6 @@ bool checkGuess(string guess, user player){
         numOfLettersLeft--;
       }
     }
-  }
-
-  if(!good_guess){
-    player.increaseNumOfWrongGuesses();
   }
 
   return good_guess;
