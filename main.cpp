@@ -282,12 +282,12 @@ int main(){
       else{player.addGood_Guess(guess);}
   }
       //below checks to see if the game should end. it ends if either word_x is solved or if the max # of guesses have been made
-      if(random_word.getNumOfLettersLeft() == 0 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
+      if(random_word.getNumOfLettersLeft() < 1 || player.getNumOfGuesses() == user_difficulty.getMaxGuesses()){
         break;}
     }
   ofstream newgame("save_state.txt");
 //Checks to see if the game is won or lost
-  if (random_word.getNumOfLettersLeft()==0){
+  if (random_word.getNumOfLettersLeft() < 1){
     cout << "You Won" << endl;
     newgame.close();
     }
