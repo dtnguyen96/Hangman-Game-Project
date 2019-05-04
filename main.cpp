@@ -186,7 +186,7 @@ int main(){
   user player;
   difficulty user_difficulty;
   word random_word;
-
+  cout << "INSTRUCTIONS: In order to quit and save your game, type 'quit' after you choose your settings" << endl;
   // ask for new/old game
   string start;
   cout << "Start a new game or continue an old game? (new/old): " << endl;
@@ -211,7 +211,8 @@ int main(){
 
     oldgame >> level1;
     oldgame >> guesses;
-    if(goodGuesses!=""){oldgame >> goodGuesses;}
+    oldgame >> goodGuesses;
+    //if(goodGuesses!=""){oldgame >> goodGuesses;}
     oldgame >> wrongGuesses;
     oldgame >> word_choice;
     oldgame >> letters_left;
