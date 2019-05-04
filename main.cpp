@@ -13,7 +13,8 @@ using namespace std;
 // Call hangman function below and input class values
 void printHangman(word random_word, int max, user& player){
   int numGuessesLeft = max - player.getNumOfGuesses();
-  switch (max-(player.getNumOfWrongGuesses())){
+  cout << numGuessesLeft << "test" << endl;
+  switch (numGuessesLeft){
     case 0:
       cout << "--------------------------------" << endl;
       cout << "            HANGMAN" << endl;
@@ -187,6 +188,7 @@ int main(){
   difficulty user_difficulty;
   word random_word;
   cout << "INSTRUCTIONS: In order to quit and save your game, type 'quit' after you choose your settings" << endl;
+  cout << "WARNING: Compiling code more than once will delete the save file! If you wish to play an old game, only run!!" << endl;
   // ask for new/old game
   string start;
   cout << "Start a new game or continue an old game? (new/old): " << endl;
@@ -212,7 +214,7 @@ int main(){
     oldgame >> level1;
     oldgame >> guesses;
     oldgame >> goodGuesses;
-    //if(goodGuesses!=""){oldgame >> goodGuesses;}
+    //if(!goodGuesses.empty()){oldgame >> goodGuesses;}
     oldgame >> wrongGuesses;
     oldgame >> word_choice;
     oldgame >> letters_left;
@@ -221,8 +223,7 @@ int main(){
     //cout << level1 << " is the level." << endl; //for testing the file reading...
     user_difficulty.setMaxGuesses();
     player.setNumOfGuesses(guesses);
-    player.setGood_Guesses(goodGuesses);
-    cout << goodGuesses;
+    if(!goodGuesses.empty()){player.setGood_Guesses(goodGuesses);}
     player.setNumOfWrongGuesses(wrongGuesses);
     random_word.setWord(word_choice);
     random_word.setWord_x(player);
