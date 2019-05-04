@@ -25,7 +25,9 @@ public:
 
   void setNumOfWrongGuesses(int wrongGuesses){ wrongGuesses = wrongGuesses;}
 
-  void setGood_Guesses(string input) {good_guesses = input;}
+  void setGood_Guesses(string input) {
+    if(input!="null"){good_guesses = input;}
+  }
 
   void increaseNumOfWrongGuesses(){ wrongGuesses++;}
 

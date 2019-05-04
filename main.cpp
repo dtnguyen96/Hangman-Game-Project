@@ -188,7 +188,7 @@ int main(){
   difficulty user_difficulty;
   word random_word;
   cout << "INSTRUCTIONS: In order to quit and save your game, type 'quit' after you choose your settings" << endl;
-  cout << "WARNING: Compiling code more than once will delete the save file! If you wish to play an old game, only run!!" << endl;
+  cout << "WARNING: Compiling code more than once will delete the save file! If you wish to play an old game, only run!! Additionally, do not save a file if you have not provided an input" << endl;
   // ask for new/old game
   string start;
   cout << "Start a new game or continue an old game? (new/old): " << endl;
@@ -223,7 +223,7 @@ int main(){
     //cout << level1 << " is the level." << endl; //for testing the file reading...
     user_difficulty.setMaxGuesses();
     player.setNumOfGuesses(guesses);
-    if(!goodGuesses.empty()){player.setGood_Guesses(goodGuesses);}
+    player.setGood_Guesses(goodGuesses);
     player.setNumOfWrongGuesses(wrongGuesses);
     random_word.setWord(word_choice);
     random_word.setWord_x(player);
@@ -305,9 +305,12 @@ int main(){
   }
   else {
   //Saves information on save file
+
   newgame<< user_difficulty.getLevel() <<endl;
   newgame << player.getNumOfGuesses() << endl;
-  newgame << player.getGood_Guesses() << endl;
+
+  if(player.getGood_Guesses()!=""){newgame << player.getGood_Guesses() << endl;}
+  else{newgame << "null" << endl;}
   newgame << player.getNumOfWrongGuesses() << endl;
   newgame << random_word.getWord()<<endl;
   newgame << random_word.getNumOfLettersLeft();
