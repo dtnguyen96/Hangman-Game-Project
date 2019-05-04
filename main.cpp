@@ -203,9 +203,15 @@ int main(){
 
 //there's still some issues with the save file stuff, for some reason it ony passes the word with the last character taken off
 //i also need to figure out how im gonna pass the word_x...
+    oldgame.peek();
+    if(oldgame.eof()){
+      cout << "ERROR!! NO SAVE FILE TO LOAD!!" << endl;
+      return 0;
+    }
+
     oldgame >> level1;
     oldgame >> guesses;
-    oldgame >> goodGuesses;
+    if(goodGuesses!=""){oldgame >> goodGuesses;}
     oldgame >> wrongGuesses;
     oldgame >> word_choice;
     oldgame >> letters_left;
@@ -298,7 +304,6 @@ int main(){
   else {
   //Saves information on save file
   newgame<< user_difficulty.getLevel() <<endl;
-  cout << "Level is " << user_difficulty.getLevel() << endl;
   newgame << player.getNumOfGuesses() << endl;
   newgame << player.getGood_Guesses() << endl;
   newgame << player.getNumOfWrongGuesses() << endl;
